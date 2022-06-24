@@ -11,15 +11,16 @@
 
 <body>
 
-<h3>	Registration</h3>
+<h3>Registration</h3>
+<h4>Fields with (*) are required </h4>
 
 <form:form action="processForm" modelAttribute="user">
 
-First name: <form:input path="firstName" />
+First name (*): <form:input path="firstName" />
 
 <br><br>
 
-Last name: <form:input path="lastName" />
+Last name (*): <form:input path="lastName" />
 
 <br><br>
 
@@ -27,7 +28,7 @@ Age: <form:input path="age" />
 
 <br><br>
 
-e-mail address: <form:input path="emailAddress" />
+e-mail address (*): <form:input path="emailAddress" />
 
 <br><br>
 

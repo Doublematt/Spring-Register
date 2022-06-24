@@ -2,14 +2,38 @@ package com.dm.springRegister.mvc;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class User {
 	
-	
+	/*
+	 * Declarations of user's attributes
+	 * validation of attributes
+	 */
+	@NotNull(message = "field required")
+	@Size(min = 1, message ="field required")
 	private String firstName;
+	
+	@NotNull(message = "field required")
+	@Size(min = 1, message = "field required")
 	private String lastName;
+	
+	@NotNull(message = "field required")
+	@Min(value = 18, message = "Only for adults")
+	@Max( value =100, message = "Too old to be true")
 	private Integer age;
 	private String gender;
+	
+	@NotNull(message = "field required")
+	@Size(min = 1, message = "field required")
+	//simple regex for e-mail validation checking if '@' is present
+	@Pattern(regexp="^(.+)@(.+)$", message = "not an e-mail")
 	private String emailAddress;
+	
 	private String country;
 	
 	//to store countries and their IDs
